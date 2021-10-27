@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 
 const login = (email, password) => {
 
-    logger.info(`Authentication on email ${email} and password ${password}`);
+    logger.info(`Authentication on email ${email} and password ${password} by using jwt`);
 
     let user = userModel.getUserByEmailAndPassword(email, password);
     if (user.length <= 0){
