@@ -3,14 +3,12 @@ const {ApiError} = require("../payload/ApiError");
 const users = [{
         firstName: "John",
         lastName: "Doe",
-        age: 24,
         email: "example@examm.com",
         password: "1234"
     },
     {
         firstName: "Yusuf",
         lastName: "Ali",
-        age: 24,
         email: "xyz@examm.com",
         password: "1234"
     }];
