@@ -1,20 +1,15 @@
 const oracledb = require('oracledb');
 const util = require("../utils/util");
 
-/*const host     = process.env.DB_HOST;
+const host     = process.env.DB_HOST;
 const database = process.env.DB_DATABASE;
 const username = process.env.DB_USERNAME;
-const password = process.env.DB_PASSWORD*/
-const host = '15.15.0.59:1521';
-const database = 'students';
-const username = 'students';
-const password = 'students';
-
+const password = process.env.DB_PASSWORD;
 
 const executeQuery = async (query, params) => {
     let connection;
     try {
-        //oracledb.initOracleClient({libDir: 'D:\\TAAJ\\instantclient_21_3'});
+        oracledb.initOracleClient({libDir: 'D:\\TAAJ\\instantclient_21_3'});
 
         connection = await oracledb.getConnection({
             username: username,

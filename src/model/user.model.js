@@ -17,8 +17,7 @@ const users = [{
 //---------------------------//
 
 const getUsers = async () => {
-    let results = await db.executeQuery(`SELECT * FROM EMPLOYEE`);
-    return results;
+    return await db.executeQuery(`SELECT *  FROM EMPLOYEE`);
 }
 
 const getUser = (email) => {
