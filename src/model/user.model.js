@@ -1,5 +1,6 @@
 //Mock Database
 const {ApiError} = require("../payload/ApiError");
+const db = require("../config/database");
 const users = [{
         firstName: "John",
         lastName: "Doe",
@@ -15,8 +16,9 @@ const users = [{
 
 //---------------------------//
 
-const getUsers = () => {
-    return users;
+const getUsers = async () => {
+    let results = await db.executeQuery(`SELECT * FROM EMPLOYEE`);
+    return results;
 }
 
 const getUser = (email) => {

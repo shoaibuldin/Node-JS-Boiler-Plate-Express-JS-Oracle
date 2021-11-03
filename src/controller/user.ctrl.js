@@ -1,14 +1,18 @@
 const status = require("http-status");
 const logger = require("../config/logger");
+const {handleAsync} = require('../utils/util')
 const {userService} = require("../service");
 const {ApiError} = require("../payload/ApiError");
 const {ApiResponse} = require("../payload/ApiResponse");
 
-const getAllUsers = (req, res) => {
 
-    let users = userService.getAllUsers();
+const getAllUsers = handleAsync(async (req, res) => {
+
+    let users = await userService.getAllUsers();
     res.status(status.OK).send(new ApiResponse(status.OK, "OK", users));
-}
+});
+
+
 
 const getUserById = (req, res) => {
     res.status(status.NOT_IMPLEMENTED).send(new ApiError(status.NOT_IMPLEMENTED, "Not Implemented"))

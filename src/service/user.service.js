@@ -11,7 +11,7 @@ const createUser = (user) => {
     return userModel.create(user);
 }
 
-const getAllUsers = () => {
+const getAllUsers = async () => {
     return userModel.getUsers();
 }
 

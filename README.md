@@ -26,4 +26,8 @@
   - validations
   - config
 
+3. Database
+   Oracle
 
+getConnection
+executeQuery
