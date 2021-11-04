@@ -9,9 +9,11 @@ const login = (req, res) => {
     let password = req.body.password;
     let loginResponse = authService.login(email, password);
 
+
+    let message = res.__('loginSuccess', email);
+
     res.status(status.OK)
-        .send(new ApiResponse(status.OK,
-            "Login Successfully",loginResponse));
+        .send(new ApiResponse(status.OK,message,loginResponse));
 
 }
 
