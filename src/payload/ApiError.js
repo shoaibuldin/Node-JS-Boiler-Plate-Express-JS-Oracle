@@ -1,5 +1,5 @@
-class ApiError extends Error{
-    constructor(status, error, stack){
+class ApiError extends Error {
+    constructor(status, error, stack) {
         super(error);
         this.status = status;
         this.error = error;

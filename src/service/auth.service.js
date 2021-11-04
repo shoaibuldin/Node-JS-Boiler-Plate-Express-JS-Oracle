@@ -10,7 +10,7 @@ const login = (email, password) => {
     logger.info(`Authentication on email ${email} and password ${password} by using jwt`);
 
     let user = userModel.getUserByEmailAndPassword(email, password);
-    if (user.length <= 0){
+    if (user.length <= 0) {
         throw new ApiError(401, "Email or password does not match");
     }
 
@@ -20,6 +20,6 @@ const login = (email, password) => {
 }
 
 
-module.exports={
+module.exports = {
     login
 }

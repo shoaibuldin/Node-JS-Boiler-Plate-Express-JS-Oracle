@@ -16,7 +16,7 @@ const routerPaths = [
     }
 ];
 
-routerPaths.forEach(route=>{
+routerPaths.forEach(route => {
     router.use(route.path, route.route)
 })
 

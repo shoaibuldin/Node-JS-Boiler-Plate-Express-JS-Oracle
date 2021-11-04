@@ -7,12 +7,12 @@ const auth = (req, res, next) => {
 
     //check header
     let token = req.headers.accessToken;
-    if(!token){
+    if (!token) {
         throw new ApiError(401, "Please provide token")
     }
 
-    let response  = jwt.verify(token, process.env.JWT_SECRET_KEY);
-    if(response && response.user ){
+    let response = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    if (response && response.user) {
         next();
     }
 

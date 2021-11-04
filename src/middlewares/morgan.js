@@ -3,7 +3,7 @@ const morgan = require('morgan');
 
 const morganMiddleware = morgan(
     "tiny",
-    { stream: logger.stream.write }
+    {stream: logger.stream.write}
 );
 
 module.exports = morganMiddleware;

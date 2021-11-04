@@ -2,11 +2,11 @@
 const {ApiError} = require("../payload/ApiError");
 const db = require("../config/database");
 const users = [{
-        firstName: "John",
-        lastName: "Doe",
-        email: "example@examm.com",
-        password: "1234"
-    },
+    firstName: "John",
+    lastName: "Doe",
+    email: "example@examm.com",
+    password: "1234"
+},
     {
         firstName: "Yusuf",
         lastName: "Ali",
@@ -17,7 +17,8 @@ const users = [{
 //---------------------------//
 
 const getUsers = async () => {
-    return await db.executeQuery(`SELECT *  FROM EMPLOYEE`);
+    return await db.executeQuery(`SELECT *
+                                  FROM EMPLOYEE`);
 }
 
 const getUser = (email) => {

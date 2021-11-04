@@ -13,13 +13,9 @@ const login = (req, res) => {
     let message = res.__('loginSuccess', email);
 
     res.status(status.OK)
-        .send(new ApiResponse(status.OK,message,loginResponse));
+        .send(new ApiResponse(status.OK, message, loginResponse));
 
 }
-
-
-
-
 
 
 const register = (req, res) => {

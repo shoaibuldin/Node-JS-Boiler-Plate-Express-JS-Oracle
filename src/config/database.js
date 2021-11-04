@@ -1,7 +1,7 @@
 const oracledb = require('oracledb');
 const util = require("../utils/util");
 
-const host     = process.env.DB_HOST;
+const host = process.env.DB_HOST;
 const database = process.env.DB_DATABASE;
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
@@ -22,10 +22,10 @@ const executeQuery = async (query, params) => {
 
         return util.parseDatabaseObject(result)
 
-    }catch(err){
+    } catch (err) {
         console.log(`Error from database: ${err}`)
         return null;
-    }finally{
+    } finally {
         //connection.close();
 
     }

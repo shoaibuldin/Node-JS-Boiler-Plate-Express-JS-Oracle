@@ -13,7 +13,6 @@ const getAllUsers = handleAsync(async (req, res) => {
 });
 
 
-
 const getUserById = (req, res) => {
     res.status(status.NOT_IMPLEMENTED).send(new ApiError(status.NOT_IMPLEMENTED, "Not Implemented"))
 }
@@ -22,12 +21,12 @@ const create = (req, res) => {
     logger.info(`Calling Create User`);
 
     let user = req.body;
-    if (userService.isEmailExist(user.email)){
+    if (userService.isEmailExist(user.email)) {
         return res.status(status.NOT_ACCEPTABLE).send(new ApiError(status.NOT_ACCEPTABLE, "User already exist"))
     }
 
     let createUserStatus = userService.createUser(user);
-    if (createUserStatus){
+    if (createUserStatus) {
         return res.status(status.OK).send(new ApiResponse(status.OK, "User is created"));
     }
 
