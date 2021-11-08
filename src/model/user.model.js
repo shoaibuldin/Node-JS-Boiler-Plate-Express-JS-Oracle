@@ -27,17 +27,30 @@ const getUser = (email) => {
 
 const getUserByEmailAndPassword = async (email, password) => {
 
-    let result = await db.executeQuery(`SELECT * FROM USERS WHERE EMAIL='${email}' and PASSWORD='${password}'`)
-    console.log("Reullt" +result);
+    let result = await db.executeQuery(`SELECT *
+                                        FROM USERS
+                                        WHERE EMAIL = :email
+                                          and PASSWORD = :password`, [email, password])
+
     if (!result)
         return null;
 
     return result[0];
 }
 
-const create = (user) => {
-    users.push(user);
-    return true;
+const create = async (user) => {
+    let email = user.email;
+    let password = user.password;
+    let fullName = user.fullName;
+    let active = 0;
+
+    let result = await db.executeQuery(`INSERT INTO USERS (USERID, EMAIL, PASSWORD, FULLNAME, ACTIVE)
+                                        VALUES (USER_SEQ.nextval, :email, :password, :fullName,:active)`
+                                        , [email, password, fullName, active]);
+    if (result.rowsAffected === 1)
+        return true;
+
+    return false;
 }
 
 const isEmailExist = (email) => {

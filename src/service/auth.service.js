@@ -20,7 +20,21 @@ const login = async (email, password) => {
     return {accessToken: token};
 }
 
+const register = async (user) => {
+    let err = '';
+
+    // TODO:
+    // check the email already exist if yes throw error account already exist.
+    // if not then create
+
+    let result = await userModel.create(user);
+    if (!result)
+        err = 'Something went wrong';
+
+    return {result, err};
+}
 
 module.exports = {
-    login
+    login,
+    register
 }

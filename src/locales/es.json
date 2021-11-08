@@ -1,4 +1,6 @@
 {
   "amountTransfer": "su cantidad ha sido transferida",
-  "loginSuccess": "Usted ha iniciado sesión %s"
+  "loginSuccess": "Usted ha iniciado sesión %s",
+  "registerSuccess": "You have been registered. Please check your email to verify account",
+  "registerError": "Something went wrong with the registration please try again"
 }

@@ -5,8 +5,11 @@ const handleAsync = (fn) => (req, res, next) => {
 }
 
 const parseDatabaseObject = (data) => {
-    console.log(data);
-    // if the database has rows
+
+    if(!data.metaData || !data.rows){
+        return data;
+    }
+
     let columns = data.metaData;
     let rows = data.rows;
     let array = [];

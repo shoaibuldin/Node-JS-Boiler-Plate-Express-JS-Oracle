@@ -1,4 +1,6 @@
 {
   "amountTransfer": "your amount has been transferred",
-  "loginSuccess": "You have been logged in %s"
+  "loginSuccess": "You have been logged in %s",
+  "registerSuccess": "You have been registered. Please check your email to verify account",
+  "registerError": "Something went wrong with the registration please try again"
 }
