@@ -5,12 +5,21 @@ const handleAsync = (fn) => (req, res, next) => {
 }
 
 const parseDatabaseObject = (data) => {
-    //TODO:
-    //1.
+    console.log(data);
+    // if the database has rows
+    let columns = data.metaData;
+    let rows = data.rows;
+    let array = [];
 
-
-    return data;
-}
+    rows.forEach((row, i) => {
+        var obj = {};
+        columns.map((r, c) => {
+            obj[r.name] = row[c];
+        });
+        array.push(obj);
+    });
+    return array;
+};
 
 module.exports = {
     parseDatabaseObject,

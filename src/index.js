@@ -66,9 +66,9 @@ app.use((req, res, next) => {
 });
 
 // All error handling exception middleware
-/*app.use((err, req, res, next) => {
+app.use((err, req, res, next) => {
     res.status(500).send(err)
-})*/
+})
 
 
 app.listen(port, () => {

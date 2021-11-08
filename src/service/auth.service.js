@@ -5,12 +5,13 @@ const {ApiResponse} = require("../payload/ApiResponse");
 const jwt = require('jsonwebtoken');
 
 
-const login = (email, password) => {
+const login = async (email, password) => {
 
     logger.info(`Authentication on email ${email} and password ${password} by using jwt`);
 
-    let user = userModel.getUserByEmailAndPassword(email, password);
-    if (user.length <= 0) {
+    let user = await userModel.getUserByEmailAndPassword(email, password);
+    console.log(user);
+    if (!user || user.length <= 0) {
         throw new ApiError(401, "Email or password does not match");
     }
 

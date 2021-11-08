@@ -25,9 +25,14 @@ const getUser = (email) => {
     return users.filter(u => u.email === email);
 }
 
-const getUserByEmailAndPassword = (email, password) => {
-    return users.filter(u => u.email === email
-        && u.password === password);
+const getUserByEmailAndPassword = async (email, password) => {
+
+    let result = await db.executeQuery(`SELECT * FROM USERS WHERE EMAIL='${email}' and PASSWORD='${password}'`)
+    console.log("Reullt" +result);
+    if (!result)
+        return null;
+
+    return result[0];
 }
 
 const create = (user) => {
